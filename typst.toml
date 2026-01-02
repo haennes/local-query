@@ -1,0 +1,9 @@
+[package]
+name = "local-query"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["haennes <local-query@addy.hannses.de>"]
+license = "AGPLv3"
+description = "Pass content to the query function"
+repository = "https://github.com/haennes/localquery"
+compiler = "0.12.0"
