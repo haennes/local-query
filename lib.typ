@@ -13,8 +13,11 @@
   return children
 }
 
-#let query_label(name, content) = {
-  if get_children(content).contains(metadata("__label__" + name + "_before")) {
+#let query_label(name, content, depth: none) = {
+  let children_contain(l) = get_children(content).contains(metadata(
+    "__label__" + name + l,
+  ))
+  if children_contain("_before") and children_contain("_after") {
     let c = get_children(content)
       .split(metadata("__label__" + name + "_before"))
       .last()
