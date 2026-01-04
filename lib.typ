@@ -26,9 +26,12 @@
       .join()
     c
   }
-  let children = get_children(content)
-  for child in children {
-    query_label(name, child)
+  let next_depth = if depth == none { none } else { depth - 1 }
+  if depth == none or depth > 0 {
+    let children = get_children(content)
+    for child in children {
+      query_label(name, child, depth: next_depth)
+    }
   }
 }
 
